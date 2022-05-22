@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/a']" >Zombies Raid</a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" *ngIf="!hasCookie()" [routerLink]="['/login']"><i class="nc-icon nc-single-02" aria-hidden="true"></i>&nbsp;Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/home']"><i class="nc-icon nc-compass-05" aria-hidden="true"></i>&nbsp;Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" *ngIf="hasCookie()"><i class="nc-icon nc-chat-33" aria-hidden="true"></i> Chat</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" *ngIf="hasCookie()" [routerLink]="['/profile']"><i class="nc-icon nc-circle-10" aria-hidden="true"></i>&nbsp;Account</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>

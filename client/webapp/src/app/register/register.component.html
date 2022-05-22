@@ -1,0 +1,45 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/cp.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                    <div class="card card-register bg-transparent">
+                        <h3 class="title" style="color:white;">Create an account</h3>
+                        <form class="register-form" #registerform="ngForm">
+                            <label>Email</label>
+                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-email-85"></i>
+                                    </span>
+                                </div>
+                                <input type="text" [(ngModel)]="email" name="email" class="form-control" placeholder="Email" required (focus)="focus=true" (blur)="focus=false">
+                            </div>
+                            <label>Username</label>
+                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-single-02"></i>
+                                    </span>
+                                </div>
+                                <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username" required (focus)="focus=true" (blur)="focus=false">
+                            </div>
+                            <label>Password</label>
+                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-key-25"></i>
+                                    </span>
+                                </div>
+                                <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password" required (focus)="focus1=true" (blur)="focus1=false">
+
+                            </div>
+                            <button class="btn btn-danger btn-block btn-round" (click)="register()" [disabled]="registerform.form.invalid">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
