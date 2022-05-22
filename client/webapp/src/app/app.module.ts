@@ -13,7 +13,8 @@ import { ExamplesModule } from './examples/examples.module';
 import { ChatComponent } from './components/chat/chat.component';
 import { RegisterComponent } from './register/register.component';
 
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { MessageComponent } from './components/message/message.component'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http'
     NavbarComponent,
     FooterComponent,
     ChatComponent,
-    RegisterComponent
+    RegisterComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

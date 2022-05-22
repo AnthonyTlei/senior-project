@@ -18,10 +18,10 @@
                         <a class="nav-link" [routerLink]="['/home']"><i class="nc-icon nc-compass-05" aria-hidden="true"></i>&nbsp;Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" *ngIf="hasCookie()"><i class="nc-icon nc-chat-33" aria-hidden="true"></i> Chat</a>
+                        <a class="nav-link" *ngIf="hasCookie()" [routerLink]="['/chat']"> <i class="nc-icon nc-chat-33" aria-hidden="true"></i>&nbsp;Chat</a>
                     </li>
                     <li class="nav-item" >
-                        <a class="nav-link" *ngIf="hasCookie()" [routerLink]="['/profile']"><i class="nc-icon nc-circle-10" aria-hidden="true"></i>&nbsp;Account</a>
+                        <a class="nav-link" *ngIf="hasCookie()" [routerLink]="['/profile']"> <i class="nc-icon nc-circle-10" aria-hidden="true"></i>&nbsp;Account</a>
                     </li>
                 </ul>
             </ul>

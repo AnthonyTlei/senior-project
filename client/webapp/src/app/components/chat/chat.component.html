@@ -1,1 +1,26 @@
-<p>hello</p>
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true"
+        style="background-image: url('./assets/img/zprofile.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section chat-content">
+        <div class="container">
+
+            <div class="chat-messages">
+
+                <div class="chat-messages-show-container">
+                    <ul *ngFor="let message of this.messages" class="chat-messages-show-list" id="message-list">
+                        <app-message [message]="message"></app-message>
+                    </ul>
+                </div>
+
+                <div class="chat-messages-create-container">
+                    <input class="chat-messages-create-input" type="text" [(ngModel)]="message.content" name="message">
+                    <button class="chat-messages-create-button" (click)="SendMessage()"> Send </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

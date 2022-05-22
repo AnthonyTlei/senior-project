@@ -11,6 +11,9 @@ const io = new Server(server, {
   }
 });
 
+// Import Message model
+const Message = require('./models/Message');
+
 // Socket.io Chat Handler
 const chatHandler = require('./services/chat.service');
 
@@ -49,9 +52,11 @@ app.use(express.static('public'));
 // Routes
 app.use('/', rootRouter);
 
-// Socket.io Handlers
+// Socket.io on-connection and other event handlers
 const onConnection = (socket) => {
-  console.log("User Connected...");
+
+  let id = socket.id;
+
   chatHandler(io, socket);
 }
 
