@@ -8,7 +8,7 @@
 
             <div class="chat-messages">
 
-                <div class="chat-messages-show-container">
+                <div class="chat-messages-show-container" style="overflow:scroll" #scroll [scrollTop]="scroll.scrollHeight">
                     <ul *ngFor="let message of this.messages" class="chat-messages-show-list" id="message-list">
                         <app-message [message]="message"></app-message>
                     </ul>

@@ -1,6 +1,15 @@
-.message-item
+.message-item .message-user
 {
     background-color: white;
+    padding: 15px 30px;
+    margin: 10px;
+}
+
+.message-item .message-server
+{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 15px 30px;
     margin: 10px;
 }

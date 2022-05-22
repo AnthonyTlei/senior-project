@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { io } from 'socket.io-client';
 import {Message} from '../../models/Message'
@@ -9,6 +9,8 @@ import {Message} from '../../models/Message'
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+
+  @ViewChild('scroll') private chat: ElementRef;
 
   username:string = '';
 
@@ -48,7 +50,7 @@ export class ChatComponent implements OnInit {
         msg.author = data.author;
 
         this.messages.push(msg);
-
+        this.scrollToBottom();
       }
     });
 
@@ -61,7 +63,7 @@ export class ChatComponent implements OnInit {
         msg.type = data.type;
 
         this.messages.push(msg);
-
+        this.scrollToBottom();
       }
     });
 
@@ -77,7 +79,11 @@ export class ChatComponent implements OnInit {
 
     this.messages.push(newMsg);
     this.message.content = '';
+    this.scrollToBottom();
   }
 
+  scrollToBottom(): void {
+    this.chat.nativeElement.scrollTop = this.chat.nativeElement.scrollHeight;
+  }
 
 }

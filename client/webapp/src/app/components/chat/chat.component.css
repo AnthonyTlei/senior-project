@@ -1,6 +1,6 @@
 .chat-messages-show-container{
     background: #c3c3c3;
-    height: 400px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     overflow: auto;
