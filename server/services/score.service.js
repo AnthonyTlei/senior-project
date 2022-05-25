@@ -7,7 +7,7 @@ exports.getUserScoreByUserID = async function (userid) {
         .input('USER_ID', userid)
         .execute('sp_GetScoreByUserID');
 
-        return scores.recordsets;
+        return scores.recordset;
 
     } catch (error)
     {
@@ -22,9 +22,24 @@ exports.getUserScoreByEmail = async function (email) {
         .input('EMAIL', email)
         .execute('sp_GetScoreByEmail');
 
-        return scores.recordsets;
+        return scores.recordset;
 
     } catch (error)
+    {
+        console.log(error);
+    }
+}
+
+exports.getTopUserScore = async function (count, sortby, direction) {
+    try{
+        let scores = await new sql.Request()
+        .input('COUNT', count)
+        .input('SORTBY', sortby)
+        .input('DIRECTION', direction)
+        .execute('sp_GetTopUserScore');
+
+        return scores.recordset;
+    } catch(error)
     {
         console.log(error);
     }

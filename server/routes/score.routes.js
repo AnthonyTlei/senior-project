@@ -7,6 +7,8 @@ router.post("/getUserScoreByUserID", ScoreController.getUserScoreByUserID);
 
 router.post("/getUserScoreByEmail", ScoreController.getUserScoreByEmail);
 
+router.post("/getTopUserScore", ScoreController.getTopUserScore)
+
 router.post("/addScoreByUserID", ScoreController.createScoreByUserID);
 
 router.post("/addScoreByEmail", ScoreController.createScoreByEmail);

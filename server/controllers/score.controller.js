@@ -16,6 +16,16 @@ exports.getUserScoreByEmail = async function (req, res, next) {
     })
 }
 
+exports.getTopUserScore = async function (req, res, next) {
+    let count = req.body.count;
+    let sortby = req.body.sortby;
+    let direction = req.body.direction;
+
+    scoreService.getTopUserScore(count, sortby, direction).then((data) => {
+        res.send(data);
+    })
+}
+
 exports.createScoreByUserID = async function (req, res, next) {
     let userid  = req.body.userid;
     let score = req.body.score;
