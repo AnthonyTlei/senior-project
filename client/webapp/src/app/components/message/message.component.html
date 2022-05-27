@@ -1,12 +1,12 @@
 <li class="message-item">
 
     <div *ngIf="message.author != 'server'" class="message-user">
-        <p>{{message.author}}</p>
-        <p>{{message.content}}</p>
+        <p class="btn icon-btn  btn-info"style="border-radius:12px;" >{{message.author}}</p>
+        <p class="x"  style="border-radius:12px;">{{message.content}}</p>
     </div>
 
     <div *ngIf="message.author == 'server'" class="message-server">
-        <p>{{message.content}}</p>
+        <p class="btn btn-primary">{{message.content}}</p>
     </div>
 
 </li>

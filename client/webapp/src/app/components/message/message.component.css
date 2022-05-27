@@ -13,3 +13,21 @@
     padding: 15px 30px;
     margin: 10px;
 }
+.x {
+    background-color: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    font-family: "SanFrancisco";
+    font-size: 1.25rem;
+    max-width: 600px;
+    padding: 0.5rem 1.5rem;
+    align-items: flex-start;
+    background-color: #e5e5ea;
+    color: #000;
+}
+.icon-btn {
+    padding: 1px 15px 3px 2px;
+    border-radius: 50px;
+}

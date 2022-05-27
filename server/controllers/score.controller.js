@@ -31,6 +31,8 @@ exports.createScoreByUserID = async function (req, res, next) {
     let score = req.body.score;
     let date = req.body.date;
 
+    console.log("Score USERID Controller: ", score);
+
     scoreService.createScoreByUserID(userid, score, date).then(() => {
         console.log("Score Created...");
         res.sendStatus(200);
@@ -41,6 +43,8 @@ exports.createScoreByEmail = async function (req, res, next) {
     let email  = req.body.email;
     let score = req.body.score;
     let date = req.body.date;
+
+    console.log("Score Email Controller: ", score);
 
     scoreService.createScoreByEmail(email, score, date).then(() => {
         console.log("Score Created...");

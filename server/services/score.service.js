@@ -53,6 +53,8 @@ exports.createScoreByUserID = async function (userid, score, date) {
         .input('SCORE', score)
         .input('DATE', date)
         .execute('sp_CreateScoreByUserID');
+
+        console.log("Score USERID Service: ", score);
     
     } catch (error) {
         console.log(error);

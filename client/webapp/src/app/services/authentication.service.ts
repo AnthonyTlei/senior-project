@@ -73,5 +73,29 @@ export class AuthenticationService {
       {responseType: 'text'}
       );
   }
+    getScoreById(userid: string) : Observable<any>
+  {
+    let formData = new FormData();
+    formData.append('userid', userid);
+    let ScoreUrl = this.url + 'getUserScoreByUserID';
 
+    return this.http.post(
+      ScoreUrl, 
+      formData,
+      //{responseType: 'text'}
+      );
+  }
+    getTopScores(count: string, sortby: string, direction: string) : Observable<any>
+  {
+    let formData = new FormData();
+      formData.append('count', count);
+      formData.append('sortby', sortby);
+      formData.append('direction', direction);
+      let AScore = this.url + 'getTopUserScore';
+
+    return this.http.post(
+      AScore, 
+      formData,
+      );
+  }
 }

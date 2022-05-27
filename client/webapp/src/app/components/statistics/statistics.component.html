@@ -1,0 +1,57 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/gs.jpg');">
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                    <img src="./assets/img/faces/ar.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                </div>
+                <div class="name" >
+                    <h4 class="title">{{userN + " #"+ userId }}</h4>
+                </div>
+            </div>
+            <div class="nav-tabs-navigation col-md-6 ml-auto mr-auto text-center">
+                <h2>Scores Table</h2>
+                <table >
+                    <tr>
+                        <th>Game number</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let score of scoresArray;let i=index;" style="color:white;background-image: url('./assets/img/bn.jpg');">
+                            <td>{{i}}</td>
+                            <td>{{scoresArray[i].score}}</td>
+                            <td>{{scoresArray[i].date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="nav-tabs-navigation col-md-6 ml-auto mr-auto text-center">
+                <h2>Leaderboard</h2>
+                <table>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let score of topArray;let i=index;" style="color:white;background-image: url('./assets/img/bn.jpg');">
+                            <td>{{i+1}}</td>
+                            <td>{{topArray[i].username}}</td>
+                            <td>{{topArray[i].score}}</td>
+                            <td>{{topArray[i].date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

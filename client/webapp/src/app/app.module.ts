@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CookieService } from 'app/cookie.service';
-import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 import { ChatComponent } from './components/chat/chat.component';
 import { RegisterComponent } from './register/register.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import { MessageComponent } from './components/message/message.component'
+import { MessageComponent } from './components/message/message.component';
+import { StatisticsComponent } from './components/statistics/statistics.component'
 
 
 @NgModule({
@@ -24,14 +24,14 @@ import { MessageComponent } from './components/message/message.component'
     FooterComponent,
     ChatComponent,
     RegisterComponent,
-    MessageComponent
+    MessageComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     FormsModule,
     RouterModule,
-    ComponentsModule,
     ExamplesModule,
     AppRoutingModule,
     HttpClientModule
